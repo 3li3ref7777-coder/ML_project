@@ -30,7 +30,7 @@ An end-to-end Machine Learning Capstone project applying **Regression**, **Class
 * **Cleaned Dimensions:** `7,996` samples × `21` columns (after removing `3` rows with malformed `#NUM!` target entries).
 * **Target Variables:**
   * **Classification Target (`is_safe`):** `0` = Unsafe (`88.59%`, 7,084 samples), `1` = Safe (`11.41%`, 912 samples).
-  * **Regression Target (`perchlorate`):** Continuous chemical concentration ranging from `0.00` to `60.01`.
+  * **Regression Target (`bacteria`):** Continuous chemical concentration ranging from `0.00` to `1.00`.
 * **Features Used (20):** `aluminium`, `ammonia`, `arsenic`, `barium`, `cadmium`, `chloramine`, `chromium`, `copper`, `flouride`, `bacteria`, `viruses`, `lead`, `nitrates`, `nitrites`, `mercury`, `perchlorate`, `radium`, `selenium`, `silver`, `uranium`.
 
 ---
@@ -45,7 +45,7 @@ An end-to-end Machine Learning Capstone project applying **Regression**, **Class
    * Analyzed feature distributions and identified top correlations (`viruses` & `bacteria`: `r = 0.6185`; `chloramine` & `perchlorate`: `r = 0.5887`).
    * Identified a ~8:1 class imbalance in `is_safe`, motivating stratified train-test splitting (`stratify=y`).
 3. **Machine Learning Modeling:**
-   * **Regression:** Ordinary Least Squares (`LinearRegression`) predicting `perchlorate`.
+   * **Regression:** Ordinary Least Squares (`LinearRegression`) predicting `bacteria`.
    * **Classification:** `LogisticRegression` vs. `DecisionTreeClassifier` (`gini` and `entropy`, `max_depth=7`) predicting `is_safe`.
    * **Clustering:** `KMeans` (`k = 2..19`) evaluated via the Elbow Method and Silhouette Score.
 
@@ -56,7 +56,7 @@ An end-to-end Machine Learning Capstone project applying **Regression**, **Class
 ### 1. Regression (`Target: perchlorate`)
 | Model | MAE | MSE | RMSE | $R^2$ Score |
 | :--- | :---: | :---: | :---: | :---: |
-| **Linear Regression** | `9.2586` | `166.0954` | `12.8878` | **`0.4487`** |
+| **Linear Regression** | `0.1801` | `0.05094049` | `0.2257` | **`0.5337`** |
 
 ### 2. Classification (`Target: is_safe`)
 | Model | Accuracy | Precision | Recall | Confusion Matrix `[TN, FP, FN, TP]` |
@@ -92,6 +92,6 @@ An end-to-end Machine Learning Capstone project applying **Regression**, **Class
 
 ## 🔮 Future Improvements
 
-* **Ensemble Methods:** Train **Random Forest** and **Gradient Boosting (XGBoost / LightGBM)** models to capture non-linear feature interactions in both `perchlorate` regression and `is_safe` classification.
+* **Ensemble Methods:** Train **Random Forest** and **Gradient Boosting (XGBoost / LightGBM)** models to capture non-linear feature interactions in both `bacteria` regression and `is_safe` classification.
 * **Imbalance Handling:** Apply **SMOTE** oversampling or class-weighted loss (`class_weight='balanced'`) to boost minority-class Recall.
 * **Dimensionality Reduction:** Use **PCA** prior to K-Means clustering to reduce multi-feature noise and improve cluster separation.
