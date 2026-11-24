@@ -1,6 +1,6 @@
 # 💧 Water Quality Analysis & Predictive Modeling (ML Capstone)
 
-[![Open In Colab](https://colab.research.google.com/drive/1N4RTOuZ04hIRgi2cvKWm6A_YJocFYCK3?usp=sharivng)]
+[![Open In Colab](https://colab.research.google.com/drive/1N4RTOuZ04hIRgi2cvKWm6A_YJocFYCK3?usp=sharing)]
 [![GitHub Repository](https://github.com/3li3ref7777-coder/ML_project)]
 [![Dataset Source](https://www.kaggle.com/datasets/eissaislam/waterquality)]
 
